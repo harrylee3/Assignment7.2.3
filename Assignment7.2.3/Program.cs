@@ -11,6 +11,17 @@ static bool IsAnagram(string word1, string word2)
     {
         return false;
     }
+    var charArray1 = word1.ToCharArray();
+    var charArray2 = word2.ToCharArray();
+    Array.Sort(charArray1);
+    Array.Sort(charArray2);
+    return new string(charArray1) == new string(charArray2);
+ 
+    /*
+    if (word1.Length != word2.Length)
+    {
+        return false;
+    }
 
     var charCount = new Dictionary<char, int>();
 
@@ -40,4 +51,5 @@ static bool IsAnagram(string word1, string word2)
         }
     }
     return true;
+    */
 }
